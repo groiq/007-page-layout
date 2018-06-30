@@ -2,6 +2,7 @@ package inout;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.FontMetrics;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -49,6 +50,8 @@ public class Window {
     public static int height;
 
 // open
+    
+    
 
     /**
      * Initialisiert das Ausgabefenster und öffnet es.
@@ -79,6 +82,29 @@ public class Window {
     public static void clear() {
         image.getGraphics().fillRect(0, 0, width, height);
         contentPane.repaint();
+    }
+
+    /** 
+     * Computes the width of a string.
+     * 
+     * @param text the string 
+     * @return the width of the string in pixel
+     */
+    public static int getTextWidth(String text) {
+        Graphics g = image.getGraphics();
+        FontMetrics fm = g.getFontMetrics();
+        return (int) Math.round(fm.getStringBounds(text, g).getWidth());
+    }
+
+   /** 
+    * Computes the height of text. 
+    * 
+    * @return the height of text in pixel
+    */
+    public static int getTextHeight() {
+        Graphics g = image.getGraphics();
+        FontMetrics fm = g.getFontMetrics();
+        return fm.getHeight();
     }
 
 // Methoden zum Zeichnen.
