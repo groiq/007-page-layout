@@ -12,4 +12,12 @@ public class StrBlock extends Block {
 		this.width = Window.getTextWidth(content);
 	}
 
+	@Override
+	public void render(int x, int y) {
+//		Window.open();
+		y += Window.getTextHeight();
+		Window.drawText(content, x, y);
+		
+	}
+
 }

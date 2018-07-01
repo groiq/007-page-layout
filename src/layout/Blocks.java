@@ -7,23 +7,25 @@ public class Blocks {
 	}
 	
 	public static Block line(String line) {
-		
-		return null;
+		return new StrBlock(line);
 	}
 	
 	public static Block lines(Block... blocks) {
-		
-		return null;
+		return new Lines(blocks);
 	}
 	
 	public static Block lines(String... lines) {
-		
-		return null;
+		StrBlock[] blocks = new StrBlock[lines.length];
+		int counter = 0;
+		for (String line : lines) {
+			blocks[counter] = new StrBlock(line);
+			counter++;
+		}
+		return new Lines(blocks);
 	}
 	
 	public static Block cols(Block... blocks) {
-		
-		return null;
+		return new Columns(blocks);
 	}
 
 

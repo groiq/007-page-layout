@@ -2,9 +2,9 @@ package layout;
 
 import inout.Window;
 
-public class Block implements Renderable {
+public abstract class Block implements Renderable {
 	
-	String testtext = "Hallo Welt!";
+	String testtext = "Hello World!";
 	int cornerX = 20;
 	int cornerY = 20;
 	// bug: position 0,0 is covered by the titlebar, so I'll set the top left corner to 20,20
@@ -36,12 +36,12 @@ public class Block implements Renderable {
 	}
 
 
-	@Override
-	public void render(int x, int y) {
-		Window.open();
-		Window.drawText(testtext, x, y);
-		
-	}
+//	@Override
+//	public void render(int x, int y) {
+//		Window.open();
+//		Window.drawText(testtext, x, y);
+//		
+//	}
 
 	@Override
 	public void render() {
