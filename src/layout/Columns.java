@@ -31,6 +31,4 @@ public class Columns extends BlockBlock {
 		
 	}
 	
-
-
 }
