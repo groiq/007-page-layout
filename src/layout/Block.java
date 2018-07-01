@@ -1,15 +1,21 @@
+/*
+ * The basic block class. Mostly sets fields.
+ */
+
 package layout;
 
-import inout.Window;
-
-public abstract class Block implements Renderable {
+abstract class Block implements Renderable {
 	
+	// coordinates for the top left corner
+	// note: position 0,0 appears to be covered by the titlebar, so I've set the top left corner to 20,20
 	int cornerX = 20;
 	int cornerY = 20;
-	// bug: position 0,0 is covered by the titlebar, so I'll set the top left corner to 20,20
+	// fields for block size
 	int width;
 	int height;
 
+	//Getters and setters
+	
 	int getWidth() {
 		return width;
 	}
@@ -26,13 +32,7 @@ public abstract class Block implements Renderable {
 		this.height = height;
 	}
 
-//	@Override
-//	public void render(int x, int y) {
-//		Window.open();
-//		Window.drawText(testtext, x, y);
-//		
-//	}
-
+	// If render() is called without coordinates, render the block in the top left corner.
 	@Override
 	public void render() {
 		render(cornerX,cornerY);

@@ -1,6 +1,11 @@
-package layout;
+/*
+ * Class for aligning blocks next to each other.
+ * 
+ * Single dimension is assigned to height, plural dimension to width
+ * (there are multiple blocks next to each other, but not on top of each other)
+ */
 
-import inout.Window;
+package layout;
 
 public class Columns extends BlockBlock {
 
