@@ -31,10 +31,13 @@ public abstract class BlockBlock extends Block {
 	abstract int subblockGetPlural(Block subblock);
 	abstract void subblockSetPlural(int i, Block subblock);
 	
-	abstract int getSinglePosition();
-	abstract void setSinglePosition(int pos);
-	abstract int getPluralPosition();
-	abstract void setPluralPosition(int pos);
+//	abstract int getSinglePosition();
+//	abstract void setSinglePosition(int pos);
+//	abstract int getPluralPosition();
+//	abstract void setPluralPosition(int pos);
+	
+	abstract int getStepX(Block subblock);
+	abstract int getStepY(Block subblock);
 	
 	public BlockBlock(Block[] content) {
 		this.content = content;
@@ -58,7 +61,10 @@ public abstract class BlockBlock extends Block {
 		y += (this.getFrameSize() / 2);
 		for (Block item : content) {
 			item.render(x,y);
-			this.setPluralPosition(this.getPluralPosition() + this.subblockGetPlural(item));
+//			this.setPluralPosition(this.getPluralPosition() + this.subblockGetPlural(item));
+			x += this.getStepX(item);
+			y += this.getStepY(item);
+			// ttt "step direction x, step direction y"
 		}
 	}
 

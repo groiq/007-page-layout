@@ -3,34 +3,86 @@ package layout;
 import inout.Window;
 
 public class Lines extends BlockBlock {
-	
+
 	public Lines(Block[] content) {
-//		super(content);
-		int width = 0;
-		int height = frameSize;
-		for (int i = 0; i < content.length; i++) {
-			height += content[i].getHeight();
-			if (content[i].getWidth() > width) {
-				width = content[i].getWidth();
-			}
-		}
-		this.content = content;
-		this.width = width + frameSize;
-		this.height = height;
+		super(content);
 	}
 
 	@Override
-	public void render(int x, int y) {
-		Window.drawRectangle(x, y, getWidth(), getHeight());
-		x += 2;
-		y += 2;
-//		y += Window.getTextHeight();
-		for (Block item : content) {
-//			y += item.getHeight();
-			item.render(x,y);
-			y += item.getHeight();
-		}
-		
+	int getSingleDimension() {
+		return this.getWidth();
 	}
+
+	@Override
+	void setSingleDimension(int i) {
+		this.setWidth(i);
+	}
+
+	@Override
+	int getPluralDimension() {
+		return this.getHeight();
+	}
+
+	@Override
+	void setPluralDimension(int i) {
+		this.setHeight(i);
+	}
+
+	@Override
+	int subblockGetSingle(Block subblock) {
+		return subblock.getWidth();
+	}
+
+	@Override
+	void subblockSetSingle(int i, Block subblock) {
+		subblock.setWidth(i);
+	}
+
+	@Override
+	int subblockGetPlural(Block subblock) {
+		return subblock.getHeight();
+	}
+
+	@Override
+	void subblockSetPlural(int i, Block subblock) {
+		subblock.setHeight(i);
+	}
+
+	@Override
+	int getStepX(Block subblock) {
+		return 0;
+	}
+
+	@Override
+	int getStepY(Block subblock) {
+		return subblock.getHeight();
+	}
+	
+	
+
+//	@Override
+//	int getSinglePosition() {
+//		return 0;
+//	}
+//
+//	@Override
+//	void setSinglePosition(int pos) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	int getPluralPosition() {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
+//
+//	@Override
+//	void setPluralPosition(int pos) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+	
+
 
 }
