@@ -12,12 +12,12 @@ public abstract class BlockBlock extends Block {
 //		this.content = content;
 //	}
 	
-	@Override
-	public void render(int x, int y) {
-		for (Block item : content) {
-			item.render(x,y);
-		}
-		
-	}
+//	@Override
+//	public void render(int x, int y) {
+//		for (Block item : content) {
+//			item.render(x,y);
+//		}
+//		
+//	}
 
 }

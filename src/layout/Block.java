@@ -4,7 +4,6 @@ import inout.Window;
 
 public abstract class Block implements Renderable {
 	
-	String testtext = "Hello World!";
 	int cornerX = 20;
 	int cornerY = 20;
 	// bug: position 0,0 is covered by the titlebar, so I'll set the top left corner to 20,20
