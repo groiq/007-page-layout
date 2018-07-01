@@ -1,11 +1,13 @@
 package layout;
 
+import inout.Window;
+
 public class Columns extends BlockBlock {
 
 	public Columns(Block[] content) {
-		super(content);
+//		super(content);
 		int width = frameSize;
-		int height = frameSize;
+		int height = 0;
 		for (int i = 0; i < content.length; i++) {
 			width += content[i].getWidth();
 			if (content[i].getHeight() > height) {
@@ -13,12 +15,19 @@ public class Columns extends BlockBlock {
 			}
 		}
 		this.width = width;
-		this.height = height;
+		this.height = height + frameSize;
+		this.content = content;
 	}
 
 	@Override
 	public void render(int x, int y) {
-		// TODO Auto-generated method stub
+		Window.drawRectangle(x, y, getWidth(), getHeight());
+		x += 2;
+		y += 2;
+		for (Block item : content) {
+			item.render(x,y);
+			x += item.getWidth();
+		}
 		
 	}
 	

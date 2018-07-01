@@ -5,7 +5,7 @@ import inout.Window;
 public class Lines extends BlockBlock {
 	
 	public Lines(Block[] content) {
-		super(content);
+//		super(content);
 		int width = 0;
 		int height = frameSize;
 		for (int i = 0; i < content.length; i++) {

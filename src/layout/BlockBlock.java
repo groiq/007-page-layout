@@ -8,9 +8,9 @@ public abstract class BlockBlock extends Block {
 	Integer multiDimension;
 	
 
-	public BlockBlock(Block... content) {
-		this.content = content;
-	}
+//	public BlockBlock(Block... content) {
+//		this.content = content;
+//	}
 	
 	@Override
 	public void render(int x, int y) {
