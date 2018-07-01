@@ -34,18 +34,8 @@ public class Lines extends BlockBlock {
 	}
 
 	@Override
-	void subblockSetSingle(int i, Block subblock) {
-		subblock.setWidth(i);
-	}
-
-	@Override
 	int subblockGetPlural(Block subblock) {
 		return subblock.getHeight();
-	}
-
-	@Override
-	void subblockSetPlural(int i, Block subblock) {
-		subblock.setHeight(i);
 	}
 
 	@Override
@@ -58,31 +48,4 @@ public class Lines extends BlockBlock {
 		return subblock.getHeight();
 	}
 	
-	
-
-//	@Override
-//	int getSinglePosition() {
-//		return 0;
-//	}
-//
-//	@Override
-//	void setSinglePosition(int pos) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	int getPluralPosition() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	void setPluralPosition(int pos) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-	
-
-
 }

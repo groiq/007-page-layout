@@ -34,18 +34,8 @@ public class Columns extends BlockBlock {
 	}
 
 	@Override
-	void subblockSetSingle(int i, Block subblock) {
-		subblock.setHeight(i);
-	}
-
-	@Override
 	int subblockGetPlural(Block subblock) {
 		return subblock.getWidth();
-	}
-
-	@Override
-	void subblockSetPlural(int i, Block subblock) {
-		subblock.setWidth(i);
 	}
 
 	@Override
@@ -57,9 +47,5 @@ public class Columns extends BlockBlock {
 	int getStepY(Block subblock) {
 		return 0;
 	}
-	
-	
-
-
-	
+		
 }

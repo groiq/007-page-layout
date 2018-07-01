@@ -1,10 +1,12 @@
 package layout;
 
+import java.awt.Color;
+
 import inout.Window;
 
 public abstract class BlockBlock extends Block {
 	
-	int frameSize = 4;
+	int frameSize = 8;
 	
 	Block[] content;
 	
@@ -27,14 +29,7 @@ public abstract class BlockBlock extends Block {
 	abstract void setPluralDimension(int i);
 	
 	abstract int subblockGetSingle(Block subblock);
-	abstract void subblockSetSingle(int i, Block subblock);
 	abstract int subblockGetPlural(Block subblock);
-	abstract void subblockSetPlural(int i, Block subblock);
-	
-//	abstract int getSinglePosition();
-//	abstract void setSinglePosition(int pos);
-//	abstract int getPluralPosition();
-//	abstract void setPluralPosition(int pos);
 	
 	abstract int getStepX(Block subblock);
 	abstract int getStepY(Block subblock);
@@ -56,28 +51,14 @@ public abstract class BlockBlock extends Block {
 	
 	@Override
 	public void render(int x, int y) {
-		Window.drawRectangle(x, y, this.getWidth(), this.getHeight());
+		Window.drawRectangle(x, y, this.getWidth(), this.getHeight(), Color.lightGray);
 		x += (this.getFrameSize() / 2);
 		y += (this.getFrameSize() / 2);
 		for (Block item : content) {
 			item.render(x,y);
-//			this.setPluralPosition(this.getPluralPosition() + this.subblockGetPlural(item));
 			x += this.getStepX(item);
 			y += this.getStepY(item);
-			// ttt "step direction x, step direction y"
 		}
 	}
-
-//	public BlockBlock(Block... content) {
-//		this.content = content;
-//	}
-	
-//	@Override
-//	public void render(int x, int y) {
-//		for (Block item : content) {
-//			item.render(x,y);
-//		}
-//		
-//	}
 
 }
