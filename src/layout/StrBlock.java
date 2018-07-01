@@ -16,7 +16,6 @@ public class StrBlock extends Block {
 	public void render(int x, int y) {
 		y += Window.getTextHeight();
 		Window.drawText(content, x, y);
-		
 	}
 
 }

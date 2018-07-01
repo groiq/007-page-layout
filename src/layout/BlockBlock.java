@@ -5,7 +5,11 @@ public abstract class BlockBlock extends Block {
 	int frameSize = 4;
 	
 	Block[] content;
-	Integer multiDimension;
+	
+	Integer singleDimension;
+	Integer pluralDimension;
+	
+	
 	
 
 //	public BlockBlock(Block... content) {
