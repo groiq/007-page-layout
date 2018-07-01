@@ -5,30 +5,56 @@ import inout.Window;
 public class Block implements Renderable {
 	
 	String testtext = "Hallo Welt!";
+	int cornerX = 20;
+	int cornerY = 20;
+	// bug: position 0,0 is covered by the titlebar, so I'll set the top left corner to 20,20
+	int width;
+	int height;
 
 	public Block() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Block line(String line) {
+
+	int getWidth() {
+		return width;
+	}
+
+
+	void setWidth(int width) {
+		this.width = width;
+	}
+
+
+	int getHeight() {
+		return height;
+	}
+
+
+	void setHeight(int height) {
+		this.height = height;
+	}
+
+	public static Block line(String line) {
 		
 		return null;
 	}
 	
-	public Block lines(Block... blocks) {
+	public static Block lines(Block... blocks) {
 		
 		return null;
 	}
 	
-	public Block lines(String... lines) {
+	public static Block lines(String... lines) {
 		
 		return null;
 	}
 	
-	public Block cols(Block... blocks) {
+	public static Block cols(Block... blocks) {
 		
 		return null;
 	}
+
 
 	@Override
 	public void render(int x, int y) {
@@ -39,7 +65,7 @@ public class Block implements Renderable {
 
 	@Override
 	public void render() {
-		render(20,20);	// bug: position 0,0 is covered by the titlebar
+		render(cornerX,cornerY);
 		
 	}
 
