@@ -10,30 +10,21 @@ public abstract class Block implements Renderable {
 	int width;
 	int height;
 
-	public Block() {
-		// TODO Auto-generated constructor stub
-	}
-	
-
 	int getWidth() {
 		return width;
 	}
-
 
 	void setWidth(int width) {
 		this.width = width;
 	}
 
-
 	int getHeight() {
 		return height;
 	}
 
-
 	void setHeight(int height) {
 		this.height = height;
 	}
-
 
 //	@Override
 //	public void render(int x, int y) {
@@ -45,7 +36,6 @@ public abstract class Block implements Renderable {
 	@Override
 	public void render() {
 		render(cornerX,cornerY);
-		
 	}
 
 }
